@@ -1,0 +1,46 @@
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\bin\Debug\netcoreapp3.1\ImgSplitter.exe
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\bin\Debug\netcoreapp3.1\ImgSplitter.deps.json
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\bin\Debug\netcoreapp3.1\ImgSplitter.runtimeconfig.json
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\bin\Debug\netcoreapp3.1\ImgSplitter.runtimeconfig.dev.json
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\bin\Debug\netcoreapp3.1\ImgSplitter.dll
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\bin\Debug\netcoreapp3.1\ImgSplitter.pdb
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\ImgSplitter.csproj.AssemblyReference.cache
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\Dictionaries\ControlsDictionary.baml
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\ImgSplitter_MarkupCompile.cache
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\ImgSplitter_MarkupCompile.lref
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\ImgSplitter.g.resources
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\ImgSplitter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\ImgSplitter.AssemblyInfoInputs.cache
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\ImgSplitter.AssemblyInfo.cs
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\ImgSplitter.csproj.CoreCompileInputs.cache
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\ImgSplitter.dll
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\ImgSplitter.pdb
+C:\Users\alicj\source\repos\ImageCutter\ImageCutter\obj\Debug\netcoreapp3.1\ImgSplitter.genruntimeconfig.cache
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\bin\Debug\netcoreapp3.1\ImgSplitter.exe
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\bin\Debug\netcoreapp3.1\ImgSplitter.deps.json
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\bin\Debug\netcoreapp3.1\ImgSplitter.runtimeconfig.json
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\bin\Debug\netcoreapp3.1\ImgSplitter.runtimeconfig.dev.json
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\bin\Debug\netcoreapp3.1\ImgSplitter.dll
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\bin\Debug\netcoreapp3.1\ImgSplitter.pdb
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\ImgSplitter.csproj.AssemblyReference.cache
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\Dictionaries\ControlsDictionary.baml
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\ImgSplitter_MarkupCompile.cache
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\ImgSplitter_MarkupCompile.lref
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\ImgSplitter.g.resources
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\ImgSplitter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\ImgSplitter.AssemblyInfoInputs.cache
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\ImgSplitter.AssemblyInfo.cs
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\ImgSplitter.csproj.CoreCompileInputs.cache
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\ImgSplitter.dll
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\ImgSplitter.pdb
+C:\Users\alicj\source\repos\WPF - ImgSplitter\ImgSplitter\obj\Debug\netcoreapp3.1\ImgSplitter.genruntimeconfig.cache
