@@ -4,70 +4,78 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImgSplitter.ValidationRules"
+        xmlns:uc="clr-namespace:ImgSplitter.Templates"
         mc:Ignorable="d"
         Title="IMGSplitter" Height="450" Width="800"
-        ResizeMode="NoResize" Background="Black">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="60*"></ColumnDefinition>
-            <ColumnDefinition Width="40*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+        Background="{StaticResource Gray1}"
+        WindowStyle="None" ResizeMode="NoResize">
 
-        <Border Grid.Column="0" Style="{StaticResource BorderStyle}">
-            <StackPanel VerticalAlignment="Center">
-                <Button Content="DODAJ ZDJĘCIE" Click="GetImageButton" Style="{StaticResource Button}"/>
-                <Button x:Name="tmp" Content="" Visibility="Collapsed" IsEnabled="true" HorizontalAlignment="Stretch"/>
+    <Border BorderThickness="1" BorderBrush="{StaticResource Gray1}">
+        <DockPanel>
+            <uc:Menu DockPanel.Dock="Top" MouseLeftButtonDown="Drag_MouseLeftButtonDown" MouseLeftButtonUp="Drag_MouseLeftButtonUp" MouseMove="Drag_MouseMove"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60*"></ColumnDefinition>
+                    <ColumnDefinition Width="40*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
-                <Border Style="{StaticResource BorderImage}" HorizontalAlignment="Center">
-                    <Canvas x:Name="canvas" Width="300" Height="300">
-                        <Image x:Name="image" Width="300" Height="300"/>
-                    </Canvas>
+                <Border Grid.Column="0" Style="{StaticResource BorderStyle}">
+                    <StackPanel VerticalAlignment="Center">
+                        <Button Content="WYBIERZ ZDJĘCIE" Click="GetImageButton" Style="{StaticResource Button}"/>
+                        <Button x:Name="tmp" Content="" Visibility="Collapsed" IsEnabled="true" HorizontalAlignment="Stretch"/>
+
+                        <Border Style="{StaticResource BorderImage}" HorizontalAlignment="Center">
+                            <Canvas x:Name="canvas" Width="300" Height="300" Background="#686868">
+                                <Image x:Name="image" Width="300" Height="300"/>
+                            </Canvas>
+                        </Border>
+                        <TextBlock x:Name="fileName" HorizontalAlignment="Center" Margin="10px" Foreground="White"></TextBlock>
+                    </StackPanel>
                 </Border>
-                <TextBlock x:Name="fileName" HorizontalAlignment="Center" Margin="10px" Foreground="White"></TextBlock>
-            </StackPanel>
-        </Border>
 
-        <Border Grid.Column="1" Style="{StaticResource BorderStyle}">
-            <StackPanel VerticalAlignment="Center" Margin="0,20,60,0">
-                <Label Style="{StaticResource LabelStyle}">Liczba kolumn i wierszy</Label>
-                <TextBox x:Name="measures" Style="{StaticResource TextBoxInError}" TextChanged="SetMeasures">
-                    <TextBox.Text>
-                        <Binding Path="MeasuresValue" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                            <Binding.ValidationRules>
-                                <local:MainValidationRule MinValue="2" MaxValue="16" Message="Liczba początkowa powinna zawierać się w przedziale od"/>
-                            </Binding.ValidationRules>
-                        </Binding>
-                    </TextBox.Text>
-                </TextBox>
+                <Border Grid.Column="1" Style="{StaticResource BorderStyle}">
+                    <StackPanel VerticalAlignment="Center" Margin="0,20,60,0">
+                        <Label Style="{StaticResource LabelStyle}">Liczba kolumn i wierszy</Label>
+                        <TextBox x:Name="measures" Style="{StaticResource TextBoxInError}" TextChanged="SetMeasures">
+                            <TextBox.Text>
+                                <Binding Path="MeasuresValue" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                        <local:MainValidationRule MinValue="2" MaxValue="16" Message="Liczba początkowa powinna zawierać się w przedziale od"/>
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
 
-                <Label Style="{StaticResource LabelStyle}">Nazwa pierwszego pliku</Label>
-                <TextBox x:Name="startNumber" Style="{StaticResource TextBoxInError}">
-                    <TextBox.Text>
-                        <Binding Path="StartNumberValue" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                            <Binding.ValidationRules>
-                                <local:MainValidationRule MinValue="0" MaxValue="10" Message="Liczba początkowa powinna zawierać się w przedziale od"/>
-                            </Binding.ValidationRules>
-                        </Binding>
-                    </TextBox.Text>
-                </TextBox>
-                <Button x:Name="save" Content="PODZIEL" Click="SaveButton">
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource Button}">
-                            <Setter Property="IsEnabled" Value="false" />
-                            <Style.Triggers>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding ElementName=measures, Path=(Validation.HasError)}" Value="false" />
-                                        <Condition Binding="{Binding ElementName=startNumber, Path=(Validation.HasError)}" Value="false" />
-                                        <Condition Binding="{Binding ElementName=tmp, Path=(Button.IsEnabled)}" Value="false" />
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter Property="IsEnabled" Value="true" />
-                                </MultiDataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
-            </StackPanel>
-        </Border>
-    </Grid>
+                        <Label Style="{StaticResource LabelStyle}">Numer pierwszego pliku</Label>
+                        <TextBox x:Name="startNumber" Style="{StaticResource TextBoxInError}">
+                            <TextBox.Text>
+                                <Binding Path="StartNumberValue" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                        <local:MainValidationRule MinValue="0" MaxValue="10" Message="Liczba początkowa powinna zawierać się w przedziale od"/>
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        <Button x:Name="save" Content="ZAPISZ" Click="SaveButton">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource Button}">
+                                    <Setter Property="IsEnabled" Value="false" />
+                                    <Style.Triggers>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding ElementName=measures, Path=(Validation.HasError)}" Value="false" />
+                                                <Condition Binding="{Binding ElementName=startNumber, Path=(Validation.HasError)}" Value="false" />
+                                                <Condition Binding="{Binding ElementName=tmp, Path=(Button.IsEnabled)}" Value="false" />
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="IsEnabled" Value="true" />
+                                        </MultiDataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </DockPanel>
+    </Border>
 </Window>

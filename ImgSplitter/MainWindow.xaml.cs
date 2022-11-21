@@ -36,6 +36,27 @@ namespace ImgSplitter
             this.FontFamily = new FontFamily("Tw Cen MT");
         }
 
+        private bool _isMouseDown = false;
+
+        private void Drag_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            _isMouseDown = true;
+            this.DragMove();
+        }
+
+        private void Drag_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            _isMouseDown = false;
+        }
+        private void Drag_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_isMouseDown && this.WindowState == WindowState.Maximized)
+            {
+                _isMouseDown = false;
+                this.WindowState = WindowState.Normal;
+            }
+        }
+
         public void GetImageButton(object sender, RoutedEventArgs args)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

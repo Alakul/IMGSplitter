@@ -1,20 +1,31 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    
+    <Color x:Key="Gray1Color">#1B1B1B</Color>
+    <Color x:Key="Gray2Color">#343A40</Color>
+    <Color x:Key="Gray3Color">#686868</Color>
+    <SolidColorBrush x:Key="Gray1" Color="{StaticResource Gray1Color}"/>
+    <SolidColorBrush x:Key="Gray2" Color="{StaticResource Gray2Color}"/>
+    <SolidColorBrush x:Key="Gray3" Color="{StaticResource Gray3Color}"/>
+
     <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
-        <Setter Property="Margin" Value="0,0,0,10px"></Setter>
-        <Setter Property="FontSize" Value="14px"></Setter>
-        <Setter Property="Padding" Value="12px 8px"></Setter>
-        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="Century gothic"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="0,0,0,10px"/>
+        <Setter Property="FontSize" Value="14px"/>
+        <Setter Property="Padding" Value="12px 8px"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Gray1}"/>
+        
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border x:Name="border" 
                         CornerRadius="0" 
-                        BorderBrush="#55595c" 
-                        BorderThickness="0" 
-                        Background="#fff">
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="3" 
+                        Background="{StaticResource Gray3}">
                         <ScrollViewer x:Name="PART_ContentHost" 
                             Focusable="false" 
                             HorizontalScrollBarVisibility="Hidden" 
@@ -23,6 +34,14 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="White"/>
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="BorderBrush" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style BasedOn="{StaticResource TextBoxStyle}" x:Key="TextBoxInError" TargetType="{x:Type TextBox}">
@@ -33,18 +52,31 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="TextBlockMenu" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="Century gothic"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="12px"/>
+        <Setter Property="Padding" Value="6"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>
+    
     <Style x:Key="Button" TargetType="{x:Type Button}">
-        <Setter Property="FontSize" Value="14px"></Setter>
-        <Setter Property="Background" Value="#343a40"></Setter>
-        <Setter Property="Foreground" Value="White"></Setter>
-        <Setter Property="Margin" Value="10px"></Setter>
-        <Setter Property="Padding" Value="10px"></Setter>
-        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontFamily" Value="Century Gothic"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="12px"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="{StaticResource Gray2}"/>
+        <Setter Property="Margin" Value="10px"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Gray2}"/>
 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}" Padding="16px 8px">
+                    <Border Background="{TemplateBinding Background}" Padding="16px 8px" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
                         </ContentPresenter>
                     </Border>
@@ -53,7 +85,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#55595c"/>
+                <Setter Property="BorderBrush" Value="White"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Background" Value="#55595c"/>
@@ -62,16 +94,105 @@
     </Style>
 
     <Style x:Key="BorderImage" TargetType="{x:Type Border}">
-        <Setter Property="Padding" Value="4px"></Setter>
-        <Setter Property="Background" Value="White"></Setter>
+        <Setter Property="Padding" Value="4px"/>
+        <Setter Property="Background" Value="White"/>
     </Style>
     
     <Style x:Key="BorderStyle" TargetType="{x:Type Border}">
-        <Setter Property="Padding" Value="14px"></Setter>
+        <Setter Property="Padding" Value="14px"/>
     </Style>
     
     <Style x:Key="LabelStyle" TargetType="{x:Type Label}">
-        <Setter Property="FontSize" Value="14px"></Setter>
-        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontFamily" Value="Century gothic"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="14px"/>
+        <Setter Property="Foreground" Value="White"/>
     </Style>
+
+    <Style x:Key="BorderMenu" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{DynamicResource Gray2}"/>
+        <Setter Property="Padding" Value="16,4,8,4"/>
+    </Style>
+    
+    <Style x:Key="ButtonMenu" TargetType="{x:Type Button}">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Padding" Value="6"/>
+        <Setter Property="Foreground" Value="{DynamicResource Gray1}"/>
+        <Setter Property="Background" Value="{DynamicResource Gray2}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Gray2}"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        CornerRadius="{TemplateBinding Border.CornerRadius}" 
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter x:Name="contentPresenter" 
+                              ContentTemplate="{TemplateBinding ContentTemplate}" 
+                              Content="{TemplateBinding Content}" 
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              Margin="{TemplateBinding Padding}" 
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource Gray3}"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="GridMenu" TargetType="{x:Type Grid}">
+        <Setter Property="Background" Value="{DynamicResource Gray2}"/>
+        <Style.Resources>
+            <Style TargetType="Label">
+                <Setter Property="Foreground" Value="White" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Foreground" Value="White" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="IconWhite" TargetType="{x:Type Path}">
+        <Setter Property="Height" Value="14" />
+        <Setter Property="Width" Value="14" />
+        <Setter Property="Fill" Value="White" />
+        <Setter Property="Stretch" Value="Fill" />
+    </Style>
+    
+    <Style x:Key="CloseIcon" BasedOn="{StaticResource IconWhite}" TargetType="{x:Type Path}">
+        <Setter Property="Height" Value="11" />
+        <Setter Property="Width" Value="11" />
+        <Setter Property="Fill" Value="White"/>
+        <Setter Property="Data" Value="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+    </Style>
+
+    <Style x:Key="MinimazeIcon" BasedOn="{StaticResource IconWhite}" TargetType="{x:Type Path}">
+        <Setter Property="Height" Value="11" />
+        <Setter Property="Width" Value="11" />
+        <Setter Property="Data" Value="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+        <Setter Property="Stretch" Value="Uniform" />
+        <Setter Property="Fill" Value="White"/>
+    </Style>
+
+    <ControlTemplate x:Key="Logo">
+        <Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Name="svg2" Width="1955.2001" Height="1036.3965">
+            <Canvas.RenderTransform>
+                <TranslateTransform X="0" Y="0"/>
+            </Canvas.RenderTransform>
+            <Canvas.Resources/>
+            <Canvas Name="g8">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="-121.97478" Y="-488.16052"/>
+                </Canvas.RenderTransform>
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path170" Fill="White" StrokeThickness="1.06667" Data="m 863.60056 1515.5507 c -21.57953 -31.6248 -65.16994 -105.5852 -162.36349 -275.4841 l -50.32859 -87.9769 2.99981 -0.8201 c 6.14243 -1.679 58.34015 -2.9248 122.46649 -2.9227 h 66.13333 l 10.13333 18.7237 c 11.77163 21.7509 20.29093 35.8428 22.00797 36.4036 1.61163 0.5264 7.72295 -9.3205 21.42387 -34.5196 l 11.35329 -20.8812 78.47411 0.6521 c 43.16072 0.3589 120.04562 0.9493 170.85542 1.3123 l 92.3812 0.6598 9.7962 48.1386 c 5.3878 26.4761 21.2192 104.2984 35.1808 172.9384 l 25.3846 124.8 -66.762 0.2936 c -66.9908 0.2945 -97.4333 -0.6048 -102.7689 -3.0359 -1.679 -0.765 -3.2984 -2.6753 -3.9121 -4.6148 -1.3624 -4.3055 -7.0316 -33.9137 -27.2871 -142.5096 -18.4426 -98.8765 -34.2049 -181.5999 -35.9236 -188.5333 -0.618 -2.4933 -1.4312 -4.5333 -1.8071 -4.5333 -1.5866 0 -13.0945 20.6454 -83.85949 150.4458 -66.80692 122.5404 -81.39241 148.9095 -100.57045 181.8208 -11.95579 20.5174 -23.47827 38.0314 -25.42225 38.6416 -0.65387 0.2053 -4.06728 -3.8451 -7.58535 -9.0008 z m 868.50754 3.3084 c -46.0558 -7.0122 -86.4159 -18.9482 -125.8667 -37.2236 -22.8652 -10.5923 -55.3957 -30.9662 -76.8 -48.1001 -15.2882 -12.2381 -45.6627 -42.6155 -57.4866 -57.4921 -39.9801 -50.3022 -68.6681 -113.6181 -79.503 -175.4667 -1.7718 -10.1136 -5.4104 -44.1015 -5.4104 -50.5371 0 -1.5817 7.9349 -1.7295 92.8 -1.7295 h 92.8 v 8.2666 c 0 24.5544 21.8865 80.8427 41.9036 107.7888 40.8657 55.012 98.235 85.7352 169.7941 90.9307 29.4773 2.1402 56.4427 -0.7845 96.3009 -10.4447 l 20.5334 -4.9765 v -55.7825 -55.7824 h -72 -72 v -40 -40 h 160 160 v 148.682 148.6819 l -25.0242 11.3383 c -81.3189 36.8445 -141.7418 53.6114 -217.6425 60.3934 -12.9909 1.1609 -96.5336 2.3467 -102.4 1.4535 z M 121.97478 1322.71 v -174.4 h 90.13333 90.13333 v 174.4 174.4 h -90.13333 -90.13333 z m 315.06614 173.2856 c -7.70029 -0.4409 -15.07594 -1.3773 -16.39032 -2.0807 -2.14163 -1.1462 -2.31824 -1.8186 -1.70066 -6.4742 2.0616 -15.5411 61.78258 -314.1289 66.87193 -334.3407 l 1.27241 -5.0531 70.50692 0.6229 c 65.69808 0.5804 81.6292 1.2691 83.991 3.6309 0.53777 0.5378 -0.44776 8.6319 -2.3142 19.0063 -11.0152 61.2271 -46.03283 247.7814 -55.24911 294.3363 l -6.12373 30.9333 -63.43187 0.1104 c -34.88752 0.061 -69.73208 -0.2504 -77.43237 -0.6914 z M 121.97478 716.30991 v -204.8 h 90.13333 90.13333 v 204.8 204.80004 H 212.10811 121.97478 Z M 488.4943 919.24325 c 0.24922 -1.0267 19.15459 -95.4667 42.01193 -209.86668 22.85735 -114.4 42.35419 -210.16 43.32633 -212.8 3.31678 -9.00728 6.59133 -10.63474 11.26752 -5.6 10.05763 10.8288 55.46612 86.409 147.23578 245.06668 60.12381 103.9461 103.65429 179.9949 104.92512 183.3067 0.62592 1.6311 -12.13315 1.76 -174.27222 1.76 -166.07827 0 -174.92462 -0.095 -174.49446 -1.8667 z m 426.67963 -5.8634 c 17.2226 -34.2006 171.47967 -316.29552 199.63007 -365.06994 20.9488 -36.29684 32.6925 -54.70348 36.6858 -57.50052 2.1444 -1.50199 2.5421 -1.49574 4.2692 0.0672 5.2716 4.77079 11.4845 30.30027 33.9648 139.56666 21.4618 104.31635 56.4036 279.8934 56.7303 285.0615 l 0.3207 5.0718 -167.7484 0.27 -167.74844 0.27 3.89597 -7.7366 z m 471.55607 6.1995 c -2.438 -2.4379 -2.9933 -12.5007 -1.8287 -33.1361 3.5697 -63.2539 11.2201 -104.2148 27.3935 -146.6667 35.9106 -94.25863 105.5535 -169.73182 197.7034 -214.25487 43.9794 -21.24899 88.3516 -32.52274 143.4432 -36.4449 23.9147 -1.70257 83.2729 -0.81974 102.9334 1.53092 49.1203 5.87294 87.1464 17.37966 134.2897 40.63604 23.3206 11.50437 41.1994 21.66997 46.0011 26.15546 2.9806 2.78429 3.2183 3.49926 2.7192 8.18082 -0.3008 2.82144 -0.8253 10.40989 -1.1656 16.86322 -1.9443 36.87426 -12.4005 143.2477 -15.3878 156.54321 -1.9488 8.6732 -2.8887 8.241 -25.1233 -11.55006 -26.9175 -23.95941 -48.975 -39.16854 -75.7333 -52.21966 -19.6706 -9.59416 -33.1357 -14.64558 -51.2636 -19.2315 -20.8367 -5.27116 -33.8319 -6.95784 -58.6031 -7.6062 -72.7679 -1.90464 -129.3483 20.63665 -177.6853 70.78874 -24.5234 25.44438 -40.9984 51.91398 -51.0222 81.97538 -9.1027 27.2989 -11.7166 45.6527 -12.5659 88.2334 l -0.6329 31.7334 h -90.9707 c -77.6061 0 -91.1954 -0.2249 -92.5011 -1.5306 z m 370.4448 -33.1361 v -34.6667 h 160 160 v 34.6667 34.6667 h -160 -160 z"/>
+            </Canvas>
+        </Canvas>
+    </ControlTemplate>
 </ResourceDictionary>
