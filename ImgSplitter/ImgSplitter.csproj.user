@@ -7,12 +7,24 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="CustomMessageBox\MessageBoxWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Templates\Menu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="CustomMessageBox\MessageBoxWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Dictionaries\ControlsDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dictionaries\IconDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dictionaries\MessageBoxDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

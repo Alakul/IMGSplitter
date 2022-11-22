@@ -69,7 +69,7 @@ namespace ImgSplitter
                 int imgHeight = uploadedImage.PixelHeight;
 
                 if (imgWidth != imgHeight){
-                    MessageBox.Show("Obraz nie jest kwadratem!");
+                    CustomMessageBox.CustomMessageBox.Show("Obraz nie jest kwadratem!", "Komunikat");
                     image.Source = null;
                     fileName.Text = "";
                     tmp.IsEnabled = true;
@@ -147,13 +147,13 @@ namespace ImgSplitter
                 int measureValue = int.Parse(measures.Text);
                 int part = imageToCut.PixelHeight / measureValue;
                 if (part <= 0){
-                    MessageBox.Show("Nie można podzielić obrazu!");
+                    CustomMessageBox.CustomMessageBox.Show("Nie można podzielić obrazu!", "Komunikat");
                 }
                 else{
                     CroppedBitmap[] croppedBitmaps = CutImage(measureValue, part);
                     string savePath = System.IO.Path.GetDirectoryName(openFileDialog.FileName);
                     SaveFiles(croppedBitmaps, savePath);
-                    MessageBox.Show("Pomyślnie zapisano do plików.");
+                    CustomMessageBox.CustomMessageBox.ShowNoWarning("Pomyślnie zapisano do plików.", "Komunikat");
                 }
             } 
         }
